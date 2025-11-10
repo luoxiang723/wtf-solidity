@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "test",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Import.sol": "Import"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Import.sol": {
+			"keccak256": "0xd5b3fd02888affdc3f968e78243046acd5e4e014b2e5a23f9bdd9f29d5cdeca8",
+			"urls": [
+				"bzz-raw://9c9472c54919216de4731e14a18c59951f0791e4598a1a1ec626db4b469847ca",
+				"dweb:/ipfs/QmP8FKgRyomZsbEAaDppfnxLhNQg1NyLxnHb4zfRbfxb4Q"
+			]
+		},
+		"Yeye.sol": {
+			"keccak256": "0x3c8de582b1453d4229b66852559316395427c27678e17993f0eb4a1c18f6b98d",
+			"urls": [
+				"bzz-raw://e8569b675e216da20a7197c8c8684b8bdc270473b5e5e9c18cd02a57b32e44b4",
+				"dweb:/ipfs/QmVpQ62xaG5MSzhrwGoTeewodNH2Yw97pniTDU8LsiCVDM"
+			]
+		}
+	},
+	"version": 1
+}

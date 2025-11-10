@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "str",
+						"type": "string"
+					}
+				],
+				"name": "reverseString",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "反转字符串 (Reverse String) 题目描述：反转一个字符串。输入 \"abcde\"，输出 \"edcba\"",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"BinarySearch.sol": "ReverseString"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"BinarySearch.sol": {
+			"keccak256": "0x0fbd3db55d96cc8fc905ee0766b0297ffb597e1065684f06b159e43e6306591f",
+			"urls": [
+				"bzz-raw://9f002dc8d4e16fa6a12457485d9cb5ee191975e916c2744c030a59a06e6809d3",
+				"dweb:/ipfs/QmVihQNAHSffN4vNfA5teiJ5Gx14Yjq9aCD7a1q1zGPo5v"
+			]
+		}
+	},
+	"version": 1
+}
