@@ -13,6 +13,11 @@ contract ERC20 is IERC20 {
     string public symbol;//符号
     uint8 public decimals=18;//小数位数
 
+    constructor(string memory _name, string memory _symbol){
+        name = _name;
+        symbol = _symbol;
+    }
+
     // function totalSupply() external view override returns (uint256){
     //     return totalSupply;
     // }
@@ -52,14 +57,14 @@ contract ERC20 is IERC20 {
     //铸币交易
     function mint(uint256 amount) external {
         balanceOf[msg.sender] += amount;
-        totalSupply += totalSupply;
+        totalSupply += amount;
         emit Transfer(address(0), msg.sender, amount);
     }
 
     //销毁代币
     function burn(uint256 amount) external  {
         balanceOf[msg.sender] -= amount;
-        totalSupply -= totalSupply;
+        totalSupply -= amount;
         emit Transfer(msg.sender, address(0), amount);
     }
 

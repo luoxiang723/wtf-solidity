@@ -1,0 +1,118 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "_addresses",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "multiTransferETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_addresses",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "multiTransferToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "withdrawFromFailList",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"33_Airdrop/Airdrop.sol": "Airdrop"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"31_ERC20/ERC20.sol": {
+			"keccak256": "0x98d9d5107ded125f8ed052645066e9cf827698fd14a52bdfa04f554ab46f565f",
+			"urls": [
+				"bzz-raw://19a2ed96650a6ff36a04a668d1e86eb308204b5bc1c0e8ad293a96132b5bfa7f",
+				"dweb:/ipfs/QmedHJxEKwuMCaoeNbiV3jgPQJS4EPWpTb3oxS3CvJRVmk"
+			]
+		},
+		"31_ERC20/IERC20.sol": {
+			"keccak256": "0x11655a0b2a03f5aa4be52212dfb80e18ac371c073921367d88852cc8e350103e",
+			"urls": [
+				"bzz-raw://63e76f0fe275eee8161f6cf31212d40566f6eefe42a05fa6581a922f8b136428",
+				"dweb:/ipfs/QmdyeWpYAJUWJNfi6WM77ng4jzfA1kF9yfXsKoRVz1fiW3"
+			]
+		},
+		"33_Airdrop/Airdrop.sol": {
+			"keccak256": "0x7764540abe1f7d2b7091c3c44a6ba0a623f569d4219a2beb869639e2cdcb35a9",
+			"urls": [
+				"bzz-raw://29c3e4f70ce7204d2fbfc2f269c6dfb58053369d7b9a6055d3590281dbe6573d",
+				"dweb:/ipfs/QmdifMJHYnbdSgCVsuMgfTqspjAtCoVcmobGBRF1r5me77"
+			]
+		}
+	},
+	"version": 1
+}

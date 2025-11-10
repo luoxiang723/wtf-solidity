@@ -6,6 +6,22 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -69,30 +85,6 @@
 					}
 				],
 				"name": "allowance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					}
-				],
-				"name": "allowance1",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -335,10 +327,10 @@
 	},
 	"sources": {
 		"31_ERC20/ERC20.sol": {
-			"keccak256": "0x5fa434db853bd5a8a853d4f17b7ddbf2eee1d9d70e10c24670a5d7dfa9d0b1ff",
+			"keccak256": "0x98d9d5107ded125f8ed052645066e9cf827698fd14a52bdfa04f554ab46f565f",
 			"urls": [
-				"bzz-raw://790e5e52c96f192545b9c7aa6adb206b698db1f91d16c0311095ffb99dbc277f",
-				"dweb:/ipfs/QmQst62iyEVQatxQYHTvmPUBSX4StJ6t7crJ8M8nnQv5XV"
+				"bzz-raw://19a2ed96650a6ff36a04a668d1e86eb308204b5bc1c0e8ad293a96132b5bfa7f",
+				"dweb:/ipfs/QmedHJxEKwuMCaoeNbiV3jgPQJS4EPWpTb3oxS3CvJRVmk"
 			]
 		},
 		"31_ERC20/IERC20.sol": {
