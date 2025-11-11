@@ -1,0 +1,268 @@
+{
+	"id": "f973817be39c2998d00e4d5e07839697",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"34_ERC721/IERC165.sol": {
+				"content": "pragma solidity ^0.8.0;\r\n\r\ninterface IERC165 {\r\n    /**\r\n     * @dev 如果合约实现了查询 `interfaceId`，则返回true\r\n    */\r\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"34_ERC721/IERC165.sol": {
+				"IERC165": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "bytes4",
+									"name": "interfaceId",
+									"type": "bytes4"
+								}
+							],
+							"name": "supportsInterface",
+							"outputs": [
+								{
+									"internalType": "bool",
+									"name": "",
+									"type": "bool"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {
+							"supportsInterface(bytes4)": {
+								"details": "如果合约实现了查询 `interfaceId`，则返回true"
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"supportsInterface(bytes4)": "01ffc9a7"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"\\u5982\\u679c\\u5408\\u7ea6\\u5b9e\\u73b0\\u4e86\\u67e5\\u8be2 `interfaceId`\\uff0c\\u5219\\u8fd4\\u56detrue\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"34_ERC721/IERC165.sol\":\"IERC165\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"34_ERC721/IERC165.sol\":{\"keccak256\":\"0xc92a0a7d22bda505ccd41255aaa3a0bb1c922f34a4d85fd1ae50d96f117ab7b0\",\"urls\":[\"bzz-raw://dacdb036741189e7bc526088debb3b961fc6bd5d5d6244c1eb75b5c334caedbf\",\"dweb:/ipfs/Qmb5sxdChraXCAhUKxsNoF6v2pKBKBnv82xLAggtso6UDr\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "1878",
+				"formattedMessage": "Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> 34_ERC721/IERC165.sol\n\n",
+				"message": "SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "34_ERC721/IERC165.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"34_ERC721/IERC165.sol": {
+				"ast": {
+					"absolutePath": "34_ERC721/IERC165.sol",
+					"exportedSymbols": {
+						"IERC165": [
+							10
+						]
+					},
+					"id": 11,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "0:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IERC165",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 10,
+							"linearizedBaseContracts": [
+								10
+							],
+							"name": "IERC165",
+							"nameLocation": "37:7:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 2,
+										"nodeType": "StructuredDocumentation",
+										"src": "52:82:0",
+										"text": " @dev 如果合约实现了查询 `interfaceId`，则返回true"
+									},
+									"functionSelector": "01ffc9a7",
+									"id": 9,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "supportsInterface",
+									"nameLocation": "149:17:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 5,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 4,
+												"mutability": "mutable",
+												"name": "interfaceId",
+												"nameLocation": "174:11:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 9,
+												"src": "167:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes4",
+													"typeString": "bytes4"
+												},
+												"typeName": {
+													"id": 3,
+													"name": "bytes4",
+													"nodeType": "ElementaryTypeName",
+													"src": "167:6:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes4",
+														"typeString": "bytes4"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "166:20:0"
+									},
+									"returnParameters": {
+										"id": 8,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 7,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 9,
+												"src": "210:4:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												},
+												"typeName": {
+													"id": 6,
+													"name": "bool",
+													"nodeType": "ElementaryTypeName",
+													"src": "210:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bool",
+														"typeString": "bool"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "209:6:0"
+									},
+									"scope": 10,
+									"src": "140:76:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 11,
+							"src": "27:192:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "0:219:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

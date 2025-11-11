@@ -1,0 +1,68 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "如果合约实现了查询 `interfaceId`，则返回true"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"34_ERC721/IERC165.sol": "IERC165"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"34_ERC721/IERC165.sol": {
+			"keccak256": "0xc92a0a7d22bda505ccd41255aaa3a0bb1c922f34a4d85fd1ae50d96f117ab7b0",
+			"urls": [
+				"bzz-raw://dacdb036741189e7bc526088debb3b961fc6bd5d5d6244c1eb75b5c334caedbf",
+				"dweb:/ipfs/Qmb5sxdChraXCAhUKxsNoF6v2pKBKBnv82xLAggtso6UDr"
+			]
+		}
+	},
+	"version": 1
+}

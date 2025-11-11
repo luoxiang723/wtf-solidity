@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Library.sol": "Strings"
+			"34_ERC721/Strings.sol": "Strings"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -33,11 +33,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Library.sol": {
-			"keccak256": "0x5e803d7f9a407234dfd05a40880f5990c383e88f58d6fcf34da6087212df148e",
+		"34_ERC721/Strings.sol": {
+			"keccak256": "0x321a3576c53dddaaebf8a11d489714f2617d37b71b2d8c28f69bdfa281c0fe29",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://ec8c9b5e77ea4190ddd6f6e48c1acc4518de98db716eed3be8568cfc6f28ef5d",
-				"dweb:/ipfs/QmbyaXVaUwXiunu4Fp7TT7kiBaXBkXUK6H7aYTW5u62nUM"
+				"bzz-raw://246d07fcb75de0de3c0f34fa0bb31c40b1a4b71facf1dca665938794458c95c5",
+				"dweb:/ipfs/QmUuH25jYfDrcvz7x4y9w6spa5keMShtWMDTXGLXLB7oX8"
 			]
 		}
 	},
