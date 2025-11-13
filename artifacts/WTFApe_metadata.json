@@ -505,10 +505,10 @@
 	},
 	"sources": {
 		"34_ERC721/ERC721.sol": {
-			"keccak256": "0xad5c710ffa132db3c053837ef44d28cfb0c73d5f6291cb8de94c9385a77f47d9",
+			"keccak256": "0xc7eae279c93cc1731156f1e4d94fd19bc91c0e9b91ad707a638b35870c3d15aa",
 			"urls": [
-				"bzz-raw://8c9008a6209b437ba86b69fe429c214b688bb16106591e0fe3754ceb46253881",
-				"dweb:/ipfs/Qmavr42ELrkUGSVszkjcQuWDeZSfSXiF7ww58vQ8zJgABc"
+				"bzz-raw://e7cd3da808745e359010168c35d3f2ef5adb3d14c0d1d35f4a5a912e2a324d17",
+				"dweb:/ipfs/QmUjHxajKgL5GPfJHm7BQNpSJs4FBuujGThHAZi9h6Be1a"
 			]
 		},
 		"34_ERC721/IERC165.sol": {

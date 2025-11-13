@@ -1,0 +1,364 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nftAddr",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "List",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nftAddr",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "Purchase",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nftAddr",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Revoke",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nftAddr",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "Update",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nftAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "list",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "nftList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onERC721Received",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nftAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "purchase",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nftAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "revoke",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nftAddr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_newPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "update",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"38_NFTSwap/NFTSwap.sol": "NFTSwap"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"34_ERC721/ERC721.sol": {
+			"keccak256": "0xc7eae279c93cc1731156f1e4d94fd19bc91c0e9b91ad707a638b35870c3d15aa",
+			"urls": [
+				"bzz-raw://e7cd3da808745e359010168c35d3f2ef5adb3d14c0d1d35f4a5a912e2a324d17",
+				"dweb:/ipfs/QmUjHxajKgL5GPfJHm7BQNpSJs4FBuujGThHAZi9h6Be1a"
+			]
+		},
+		"34_ERC721/IERC165.sol": {
+			"keccak256": "0xc92a0a7d22bda505ccd41255aaa3a0bb1c922f34a4d85fd1ae50d96f117ab7b0",
+			"urls": [
+				"bzz-raw://dacdb036741189e7bc526088debb3b961fc6bd5d5d6244c1eb75b5c334caedbf",
+				"dweb:/ipfs/Qmb5sxdChraXCAhUKxsNoF6v2pKBKBnv82xLAggtso6UDr"
+			]
+		},
+		"34_ERC721/IERC721.sol": {
+			"keccak256": "0xf84950998671aa9546c13a3c5142c03916d194887c0f4c9d07abf6fd17ea681c",
+			"urls": [
+				"bzz-raw://180947b6e72587677128a37fa191000f9f9b5d4c54f48bad8773fbac4f049532",
+				"dweb:/ipfs/QmR5zDUHzZZyrNyHjSNUk95EaJzxiN7RKiKRpgRgM3fmVe"
+			]
+		},
+		"34_ERC721/IERC721Metadata.sol": {
+			"keccak256": "0x369223f439829538abafadb700bc816a2e5f8a1de04dfc7eba699e88d1191c2f",
+			"urls": [
+				"bzz-raw://669a4d23b901c0c01b1048d970d0c733bd67c2a42a5890e28e9241adc83d7acd",
+				"dweb:/ipfs/QmYUNfMX6UePstDbkMEXwV8H11F5vx5YUp1GaPHaFaNKrd"
+			]
+		},
+		"34_ERC721/IERC721Receiver.sol": {
+			"keccak256": "0x5d50aec22d9a2ec6b5e14e33f31083a033a603154e65117c6061a2da910ef48d",
+			"urls": [
+				"bzz-raw://f1cd2573597b4d2e4957954fc755e9a354bf819f7dfa9517896fca033dde2642",
+				"dweb:/ipfs/QmRxwjwm9mFTGP9me93BZ23tfgdrpNtKQ7yEjjjpZaYfjD"
+			]
+		},
+		"34_ERC721/Strings.sol": {
+			"keccak256": "0x321a3576c53dddaaebf8a11d489714f2617d37b71b2d8c28f69bdfa281c0fe29",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://246d07fcb75de0de3c0f34fa0bb31c40b1a4b71facf1dca665938794458c95c5",
+				"dweb:/ipfs/QmUuH25jYfDrcvz7x4y9w6spa5keMShtWMDTXGLXLB7oX8"
+			]
+		},
+		"34_ERC721/WTFApe.sol": {
+			"keccak256": "0xec1bd1af0f4b2d3e1743c7e00ac91ee5aadc2127c67b6bf43c63f70a5b057355",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c106dfa9bae117574e2baadc67a0330a0556c34238e6d313bf9444084f7eb4c",
+				"dweb:/ipfs/QmZYiNVCQ5tgrWqMd52oMWSUZmzFBpAbyDwZB2UQdfjeAP"
+			]
+		},
+		"38_NFTSwap/NFTSwap.sol": {
+			"keccak256": "0x685d28238a3c0c37dc9ff66f13550034275bda47466b7ef2227c6d8542d93c1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e5ec4c0814e193b133d6b1775443879a7c6e752cf3290d1e303b96377f663126",
+				"dweb:/ipfs/QmYNjVjUiG2x6Tix9y7SESAB9Z2QXTjZ31D9xjXNmdZrqu"
+			]
+		}
+	},
+	"version": 1
+}

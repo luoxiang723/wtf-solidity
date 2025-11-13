@@ -107,7 +107,7 @@ contract ERC721 is IERC721, IERC721Metadata {
 
         _owners[tokenId] = to;
         _balances[from] -=1;
-        _balances[to] -=1;
+        _balances[to] +=1;
         emit Transfer(from, to, tokenId);
     }
 

@@ -474,10 +474,10 @@
 	},
 	"sources": {
 		"34_ERC721/ERC721.sol": {
-			"keccak256": "0xe4c6a94e3a3bb3ac299a7457476ba7d0c582e7f0a451598a1eb7d2a0f52d6fde",
+			"keccak256": "0xc7eae279c93cc1731156f1e4d94fd19bc91c0e9b91ad707a638b35870c3d15aa",
 			"urls": [
-				"bzz-raw://385eea9cc36fd6dc93aa726d5a99e42238a4d5e1b8cd6f3cc9499359f91e3e18",
-				"dweb:/ipfs/QmarPRpRci6odudgAZTt2WPy2p2BoYaCDKe6rKbpDXkqzD"
+				"bzz-raw://e7cd3da808745e359010168c35d3f2ef5adb3d14c0d1d35f4a5a912e2a324d17",
+				"dweb:/ipfs/QmUjHxajKgL5GPfJHm7BQNpSJs4FBuujGThHAZi9h6Be1a"
 			]
 		},
 		"34_ERC721/IERC165.sol": {
