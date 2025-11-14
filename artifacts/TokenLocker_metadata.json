@@ -1,0 +1,215 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "token_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "beneficiary_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lockTime_",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "beneficiary",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "releaseTime",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Release",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "beneficiary",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "startTime",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "lockTime",
+						"type": "uint256"
+					}
+				],
+				"name": "TokenLockStart",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "beneficiary",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lockTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "release",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "ERC20代币时间锁合约。受益人在锁仓一段时间后才能取出代币。",
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"details": "部署时间锁合约，初始化代币合约地址，受益人地址和锁仓时间。",
+					"params": {
+						"beneficiary_": ": 受益人地址",
+						"lockTime_": ": 锁仓时间(秒)",
+						"token_": ": 被锁仓的ERC20代币合约"
+					}
+				},
+				"release()": {
+					"details": "在锁仓时间过后，将代币释放给受益人。"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"44_TokenLocker/TokenLocker.sol": "TokenLocker"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"31_ERC20/ERC20.sol": {
+			"keccak256": "0x98d9d5107ded125f8ed052645066e9cf827698fd14a52bdfa04f554ab46f565f",
+			"urls": [
+				"bzz-raw://19a2ed96650a6ff36a04a668d1e86eb308204b5bc1c0e8ad293a96132b5bfa7f",
+				"dweb:/ipfs/QmedHJxEKwuMCaoeNbiV3jgPQJS4EPWpTb3oxS3CvJRVmk"
+			]
+		},
+		"31_ERC20/IERC20.sol": {
+			"keccak256": "0x11655a0b2a03f5aa4be52212dfb80e18ac371c073921367d88852cc8e350103e",
+			"urls": [
+				"bzz-raw://63e76f0fe275eee8161f6cf31212d40566f6eefe42a05fa6581a922f8b136428",
+				"dweb:/ipfs/QmdyeWpYAJUWJNfi6WM77ng4jzfA1kF9yfXsKoRVz1fiW3"
+			]
+		},
+		"44_TokenLocker/TokenLocker.sol": {
+			"keccak256": "0x745bb09521db3c14d3a9892da3d0e478caf286a1623c376cdc1e53d46bcf7039",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fe3a9f753b7515697883aadf5bb79a05f799e42d2b1e209fb0ca183c098f2e0a",
+				"dweb:/ipfs/QmWTm33rLgLCaMXPeDvzWPhcfr74ayfPPwuidizugbS9k8"
+			]
+		}
+	},
+	"version": 1
+}

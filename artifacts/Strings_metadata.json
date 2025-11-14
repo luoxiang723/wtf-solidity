@@ -19,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"34_ERC721/Strings.sol": "Strings"
+			"34_ERC721/String.sol": "Strings"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -33,7 +33,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"34_ERC721/Strings.sol": {
+		"34_ERC721/String.sol": {
 			"keccak256": "0x321a3576c53dddaaebf8a11d489714f2617d37b71b2d8c28f69bdfa281c0fe29",
 			"license": "MIT",
 			"urls": [
