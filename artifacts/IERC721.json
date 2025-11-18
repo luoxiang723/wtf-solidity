@@ -49,14 +49,14 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"approve(uint256,address)": "febe4909",
+			"approve(address,uint256)": "095ea7b3",
 			"balanceOf(address)": "70a08231",
 			"getApproved(uint256)": "081812fc",
-			"isApprovedAll(address)": "ffb74e64",
+			"isApprovedForAll(address,address)": "e985e9c5",
 			"ownerOf(uint256)": "6352211e",
 			"safeTransferFrom(address,address,uint256)": "42842e0e",
 			"safeTransferFrom(address,address,uint256,bytes)": "b88d4fde",
-			"setApproveAll(address,bool)": "c3354402",
+			"setApprovalForAll(address,bool)": "a22cb465",
 			"supportsInterface(bytes4)": "01ffc9a7",
 			"transferFrom(address,address,uint256)": "23b872dd"
 		}
@@ -74,7 +74,7 @@
 				{
 					"indexed": true,
 					"internalType": "address",
-					"name": "operator",
+					"name": "approved",
 					"type": "address"
 				},
 				{
@@ -103,7 +103,7 @@
 					"type": "address"
 				},
 				{
-					"indexed": true,
+					"indexed": false,
 					"internalType": "bool",
 					"name": "approved",
 					"type": "bool"
@@ -140,14 +140,14 @@
 		{
 			"inputs": [
 				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
 					"internalType": "uint256",
 					"name": "tokenId",
 					"type": "uint256"
-				},
-				{
-					"internalType": "address",
-					"name": "operator",
-					"type": "address"
 				}
 			],
 			"name": "approve",
@@ -197,11 +197,16 @@
 			"inputs": [
 				{
 					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
 					"name": "operator",
 					"type": "address"
 				}
 			],
-			"name": "isApprovedAll",
+			"name": "isApprovedForAll",
 			"outputs": [
 				{
 					"internalType": "bool",
@@ -295,7 +300,7 @@
 					"type": "bool"
 				}
 			],
-			"name": "setApproveAll",
+			"name": "setApprovalForAll",
 			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"

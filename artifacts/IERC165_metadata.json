@@ -26,10 +26,11 @@
 			}
 		],
 		"devdoc": {
+			"details": "Interface of the ERC-165 standard, as defined in the https://eips.ethereum.org/EIPS/eip-165[ERC]. Implementers can declare support of contract interfaces, which can then be queried by others ({ERC165Checker}). For an implementation, see {ERC165}.",
 			"kind": "dev",
 			"methods": {
 				"supportsInterface(bytes4)": {
-					"details": "如果合约实现了查询 `interfaceId`，则返回true"
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[ERC section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
 				}
 			},
 			"version": 1
@@ -42,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"34_ERC721/IERC165.sol": "IERC165"
+			"Task2/work2/IERC165.sol": "IERC165"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -56,11 +57,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"34_ERC721/IERC165.sol": {
-			"keccak256": "0xc92a0a7d22bda505ccd41255aaa3a0bb1c922f34a4d85fd1ae50d96f117ab7b0",
+		"Task2/work2/IERC165.sol": {
+			"keccak256": "0x564310f4788f096e1c1e77edd645999aa7fbad46dd545d7a722f70d5cfe19033",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://dacdb036741189e7bc526088debb3b961fc6bd5d5d6244c1eb75b5c334caedbf",
-				"dweb:/ipfs/Qmb5sxdChraXCAhUKxsNoF6v2pKBKBnv82xLAggtso6UDr"
+				"bzz-raw://844ba854105b8a3e4cfb2cc37de926020beb97b238e85e00df05b79be953cec9",
+				"dweb:/ipfs/QmWG5HLDsFRNe3A2ZxvKcB79tqJN9V5yTwcBUjUPYhDki3"
 			]
 		}
 	},

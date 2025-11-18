@@ -6,6 +6,33 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "ERC721InvalidReceiver",
+				"type": "error"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -79,6 +106,19 @@
 				],
 				"name": "Transfer",
 				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_APES",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -155,6 +195,37 @@
 						"internalType": "bool",
 						"name": "",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "mintNFT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -264,6 +335,38 @@
 						"type": "bool"
 					}
 				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
 				"stateMutability": "view",
 				"type": "function"
 			},
@@ -292,7 +395,6 @@
 			}
 		],
 		"devdoc": {
-			"details": "Required interface of an ERC-721 compliant contract.",
 			"events": {
 				"Approval(address,address,uint256)": {
 					"details": "Emitted when `owner` enables `approved` to manage the `tokenId` token."
@@ -333,6 +435,9 @@
 				"supportsInterface(bytes4)": {
 					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[ERC section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
 				},
+				"tokenURI(uint256)": {
+					"details": "Returns the Uniform Resource Identifier (URI) for `tokenId` token."
+				},
 				"transferFrom(address,address,uint256)": {
 					"details": "Transfers `tokenId` token from `from` to `to`. WARNING: Note that the caller is responsible to confirm that the recipient is capable of receiving ERC-721 or else they may be permanently lost. Usage of {safeTransferFrom} prevents loss, though the caller must understand this adds an external call which potentially creates a reentrancy vulnerability. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. Emits a {Transfer} event."
 				}
@@ -347,7 +452,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Task2/work2/IERC721.sol": "IERC721"
+			"Task2/work2/LXApe.sol": "LXApe"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -361,6 +466,14 @@
 		"remappings": []
 	},
 	"sources": {
+		"Task2/work2/ERC721.sol": {
+			"keccak256": "0xd51d30929ff243c27dd7c2e510d344514985a7ed443824b35f6d2fbc8e0b10ba",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4b75f0310a0fbef451953ce758d4502876138803b619a35d03f6f3c2c04e07b1",
+				"dweb:/ipfs/QmZXcuRWjV9pawfvmxSmYo9y65RsVH2CrJ7nVCPMTtPKrt"
+			]
+		},
 		"Task2/work2/IERC165.sol": {
 			"keccak256": "0x564310f4788f096e1c1e77edd645999aa7fbad46dd545d7a722f70d5cfe19033",
 			"license": "MIT",
@@ -375,6 +488,38 @@
 			"urls": [
 				"bzz-raw://d6cb1d9c54310c826f7d9e37c7c96a2f96f2123e90030000c7d6fcd20d47ea75",
 				"dweb:/ipfs/QmT4xhMDKQLFxUMN8gSp19oLDBfhGffnbnt3KanqHxcEff"
+			]
+		},
+		"Task2/work2/IERC721Metadata.sol": {
+			"keccak256": "0xca9b1a0bf2ca2bb0f89d9f053318eb8099e4d3f78cc0c2028997d9efccf6f92f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://deb9192f64468b0ca6e76c32aeb6492da823de323c672a0771d5bdb01586e7d2",
+				"dweb:/ipfs/QmdrBxC76GTW7xbReWhJq6SpyU1RZzJQFJaAqfwLVGJ4vQ"
+			]
+		},
+		"Task2/work2/IERC721Receiver.sol": {
+			"keccak256": "0xc14679dbfb7edf45a291b326a7da2622f3de55656ba5f8d4385dc0e633d9f023",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d17425aa3326a8bcf6efb198ac861c8002d0a4651d89a4c3eb46b275630dbbfa",
+				"dweb:/ipfs/QmW9V9a2x6sto3RAan9JYVoUZHchkFiBoNs8xyrkbB3WBz"
+			]
+		},
+		"Task2/work2/LXApe.sol": {
+			"keccak256": "0x123e015f073beca61f289cfe0269e2920383864725ffc685696ff694cbcf6870",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://49d006bdf9de186f75ce5c969486fcaca72b5fd3c219f2e0068328edc2d4a1c6",
+				"dweb:/ipfs/Qmdg9XDs5APxkdws1jHsRcoqKuTJUjyWGB8WFbW8gkMau1"
+			]
+		},
+		"Task2/work2/Strings.sol": {
+			"keccak256": "0x321a3576c53dddaaebf8a11d489714f2617d37b71b2d8c28f69bdfa281c0fe29",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://246d07fcb75de0de3c0f34fa0bb31c40b1a4b71facf1dca665938794458c95c5",
+				"dweb:/ipfs/QmUuH25jYfDrcvz7x4y9w6spa5keMShtWMDTXGLXLB7oX8"
 			]
 		}
 	},

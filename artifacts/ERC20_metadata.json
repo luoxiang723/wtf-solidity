@@ -75,6 +75,30 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					},
@@ -84,7 +108,7 @@
 						"type": "address"
 					}
 				],
-				"name": "allowance",
+				"name": "allowances",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -104,7 +128,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -141,8 +165,13 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -152,55 +181,21 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "decimals",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
 				"name": "mint",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "name",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "symbol",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -225,7 +220,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -254,7 +249,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "value",
 						"type": "uint256"
 					}
 				],
@@ -273,33 +268,33 @@
 		"devdoc": {
 			"events": {
 				"Approval(address,address,uint256)": {
-					"details": "释放条件：当`value`单位的货币从账户(`owner`)授权给另一个账户(`spender`)时"
+					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
 				},
 				"Transfer(address,address,uint256)": {
-					"details": "释放条件： 当`value`单位的货币从账户（`from`）转移到另一个账户（`to`）时"
+					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
 				}
 			},
 			"kind": "dev",
 			"methods": {
+				"allowance(address,address)": {
+					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
+				},
 				"approve(address,uint256)": {
-					"details": "调用者账户给`spender`账户授权`amount`数量代币 如果成功，返回 `true` 释放 `{Approval}事件`"
+					"details": "Sets a `value` amount of tokens as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
 				},
 				"transfer(address,uint256)": {
-					"details": "转账 `amount`单位代币，从调用者账户到另一个账户`to` 如果成功，返回`true` 释放 {Transfer}事件"
+					"details": "Moves a `value` amount of tokens from the caller's account to `to`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
 				},
 				"transferFrom(address,address,uint256)": {
-					"details": "通过授权机制，从`from`账户向`to`账户转账`amount`数量代币。转账的部分会从调用者的`allowance`中扣除。 如果成功，返回`true` 释放{Transfer}事件"
+					"details": "Moves a `value` amount of tokens from `from` to `to` using the allowance mechanism. `value` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
 				}
 			},
 			"stateVariables": {
-				"allowance": {
-					"details": "返回`owner`账户授权给`spender`账户的额度，默认为0 当{approve}或{transferFrom} 被调用时，`allowance`会改变"
-				},
 				"balanceOf": {
-					"details": "返回账户`account`所持有的代币数"
+					"details": "Returns the value of tokens owned by `account`."
 				},
 				"totalSupply": {
-					"details": "返回代币总供给"
+					"details": "Returns the value of tokens in existence."
 				}
 			},
 			"version": 1
@@ -312,7 +307,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"31_ERC20/ERC20.sol": "ERC20"
+			"Task2/work1/ERC20.sol": "ERC20"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -326,18 +321,19 @@
 		"remappings": []
 	},
 	"sources": {
-		"31_ERC20/ERC20.sol": {
-			"keccak256": "0x98d9d5107ded125f8ed052645066e9cf827698fd14a52bdfa04f554ab46f565f",
+		"Task2/work1/ERC20.sol": {
+			"keccak256": "0x20ba43b7dac5cd70f9ccbec97fcbb6b6b65c8bdc5cdfeae189923cc40f0b15c3",
 			"urls": [
-				"bzz-raw://19a2ed96650a6ff36a04a668d1e86eb308204b5bc1c0e8ad293a96132b5bfa7f",
-				"dweb:/ipfs/QmedHJxEKwuMCaoeNbiV3jgPQJS4EPWpTb3oxS3CvJRVmk"
+				"bzz-raw://a6b220e5748d2b28b9cfdc34cd09f40107394127ba51d085efdfcc30d9d598ec",
+				"dweb:/ipfs/QmfSYqTJgiHQ3TWrQnSvQvaD5XEg9qw9Y33Z5ixxBk2PL1"
 			]
 		},
-		"31_ERC20/IERC20.sol": {
-			"keccak256": "0x11655a0b2a03f5aa4be52212dfb80e18ac371c073921367d88852cc8e350103e",
+		"Task2/work1/IERC20.sol": {
+			"keccak256": "0xa2d847c6ad19f5b8ac7c6f4c462bb4c1fd76307cb17478c49743354cf122f77f",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://63e76f0fe275eee8161f6cf31212d40566f6eefe42a05fa6581a922f8b136428",
-				"dweb:/ipfs/QmdyeWpYAJUWJNfi6WM77ng4jzfA1kF9yfXsKoRVz1fiW3"
+				"bzz-raw://bcb88894b8d6c2967694114eceba85a4dd40d7adea390e20e766657cb6d5d4be",
+				"dweb:/ipfs/QmQQVNAzL8PnhUCYzSvSoiEzuqNtEroBmyBgqCJ9hbKJ5B"
 			]
 		}
 	},

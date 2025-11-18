@@ -29,7 +29,7 @@
 						"type": "address"
 					}
 				],
-				"name": "InvaildERC721Receiver",
+				"name": "ERC721InvalidReceiver",
 				"type": "error"
 			},
 			{
@@ -44,7 +44,7 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "operator",
+						"name": "approved",
 						"type": "address"
 					},
 					{
@@ -73,7 +73,7 @@
 						"type": "address"
 					},
 					{
-						"indexed": true,
+						"indexed": false,
 						"internalType": "bool",
 						"name": "approved",
 						"type": "bool"
@@ -111,94 +111,13 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "_balances",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
+						"name": "to",
 						"type": "address"
 					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "_operatorApprovals",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "_owners",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "_tokenApprovals",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "tokenId",
 						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "operator",
-						"type": "address"
 					}
 				],
 				"name": "approve",
@@ -248,11 +167,16 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
 						"name": "operator",
 						"type": "address"
 					}
 				],
-				"name": "isApprovedAll",
+				"name": "isApprovedForAll",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -359,7 +283,7 @@
 						"type": "bool"
 					}
 				],
-				"name": "setApproveAll",
+				"name": "setApprovalForAll",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -440,26 +364,72 @@
 			}
 		],
 		"devdoc": {
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when `owner` enables `approved` to manage the `tokenId` token."
+				},
+				"ApprovalForAll(address,address,bool)": {
+					"details": "Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets."
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `tokenId` token is transferred from `from` to `to`."
+				}
+			},
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"approve(address,uint256)": {
+					"details": "Gives permission to `to` to transfer `tokenId` token to another account. The approval is cleared when the token is transferred. Only a single account can be approved at a time, so approving the zero address clears previous approvals. Requirements: - The caller must own the token or be an approved operator. - `tokenId` must exist. Emits an {Approval} event."
+				},
+				"balanceOf(address)": {
+					"details": "Returns the number of tokens in ``owner``'s account."
+				},
+				"getApproved(uint256)": {
+					"details": "Returns the account approved for `tokenId` token. Requirements: - `tokenId` must exist."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "Returns if the `operator` is allowed to manage all of the assets of `owner`. See {setApprovalForAll}"
+				},
+				"ownerOf(uint256)": {
+					"details": "Returns the owner of the `tokenId` token. Requirements: - `tokenId` must exist."
+				},
+				"safeTransferFrom(address,address,uint256)": {
+					"details": "Safely transfers `tokenId` token from `from` to `to`, checking first that contract recipients are aware of the ERC-721 protocol to prevent tokens from being forever locked. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must have been allowed to move this token by either {approve} or   {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon   a safe transfer. Emits a {Transfer} event."
+				},
+				"safeTransferFrom(address,address,uint256,bytes)": {
+					"details": "Safely transfers `tokenId` token from `from` to `to`. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must exist and be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. - If `to` refers to a smart contract, it must implement {IERC721Receiver-onERC721Received}, which is called upon   a safe transfer. Emits a {Transfer} event."
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "Approve or remove `operator` as an operator for the caller. Operators can call {transferFrom} or {safeTransferFrom} for any token owned by the caller. Requirements: - The `operator` cannot be the address zero. Emits an {ApprovalForAll} event."
+				},
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[ERC section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+				},
+				"tokenURI(uint256)": {
+					"details": "Returns the Uniform Resource Identifier (URI) for `tokenId` token."
+				},
+				"transferFrom(address,address,uint256)": {
+					"details": "Transfers `tokenId` token from `from` to `to`. WARNING: Note that the caller is responsible to confirm that the recipient is capable of receiving ERC-721 or else they may be permanently lost. Usage of {safeTransferFrom} prevents loss, though the caller must understand this adds an external call which potentially creates a reentrancy vulnerability. Requirements: - `from` cannot be the zero address. - `to` cannot be the zero address. - `tokenId` token must be owned by `from`. - If the caller is not `from`, it must be approved to move this token by either {approve} or {setApprovalForAll}. Emits a {Transfer} event."
+				}
+			},
+			"stateVariables": {
+				"name": {
+					"details": "Returns the token collection name."
+				},
+				"symbol": {
+					"details": "Returns the token collection symbol."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {
-				"supportsInterface(bytes4)": {
-					"notice": "bytes4(keccak256(ERC721.Transfer.selector) ^ keccak256(ERC721.Approval.selector) ^ ··· ^keccak256(ERC721.isApprovedForAll.selector)) bytes4(keccak256(IERC721Metadata.name.selector ^ IERC721Metadata.symbol.selector ^ IERC721Metadata.tokenURI.selector))*"
-				},
-				"tokenURI(uint256)": {
-					"notice": "实现IERC721Metadata的tokenURI函数，查询metadata。"
-				}
-			},
+			"methods": {},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"34_ERC721/ERC721.sol": "ERC721"
+			"Task2/work2/ERC721.sol": "ERC721"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -473,42 +443,47 @@
 		"remappings": []
 	},
 	"sources": {
-		"34_ERC721/ERC721.sol": {
-			"keccak256": "0xc7eae279c93cc1731156f1e4d94fd19bc91c0e9b91ad707a638b35870c3d15aa",
+		"Task2/work2/ERC721.sol": {
+			"keccak256": "0xd51d30929ff243c27dd7c2e510d344514985a7ed443824b35f6d2fbc8e0b10ba",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://e7cd3da808745e359010168c35d3f2ef5adb3d14c0d1d35f4a5a912e2a324d17",
-				"dweb:/ipfs/QmUjHxajKgL5GPfJHm7BQNpSJs4FBuujGThHAZi9h6Be1a"
+				"bzz-raw://4b75f0310a0fbef451953ce758d4502876138803b619a35d03f6f3c2c04e07b1",
+				"dweb:/ipfs/QmZXcuRWjV9pawfvmxSmYo9y65RsVH2CrJ7nVCPMTtPKrt"
 			]
 		},
-		"34_ERC721/IERC165.sol": {
-			"keccak256": "0xc92a0a7d22bda505ccd41255aaa3a0bb1c922f34a4d85fd1ae50d96f117ab7b0",
+		"Task2/work2/IERC165.sol": {
+			"keccak256": "0x564310f4788f096e1c1e77edd645999aa7fbad46dd545d7a722f70d5cfe19033",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://dacdb036741189e7bc526088debb3b961fc6bd5d5d6244c1eb75b5c334caedbf",
-				"dweb:/ipfs/Qmb5sxdChraXCAhUKxsNoF6v2pKBKBnv82xLAggtso6UDr"
+				"bzz-raw://844ba854105b8a3e4cfb2cc37de926020beb97b238e85e00df05b79be953cec9",
+				"dweb:/ipfs/QmWG5HLDsFRNe3A2ZxvKcB79tqJN9V5yTwcBUjUPYhDki3"
 			]
 		},
-		"34_ERC721/IERC721.sol": {
-			"keccak256": "0xf84950998671aa9546c13a3c5142c03916d194887c0f4c9d07abf6fd17ea681c",
+		"Task2/work2/IERC721.sol": {
+			"keccak256": "0x3c6bab00c3349186ffdab2d2630e218f3cba9157000adccad3b17945f60943e6",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://180947b6e72587677128a37fa191000f9f9b5d4c54f48bad8773fbac4f049532",
-				"dweb:/ipfs/QmR5zDUHzZZyrNyHjSNUk95EaJzxiN7RKiKRpgRgM3fmVe"
+				"bzz-raw://d6cb1d9c54310c826f7d9e37c7c96a2f96f2123e90030000c7d6fcd20d47ea75",
+				"dweb:/ipfs/QmT4xhMDKQLFxUMN8gSp19oLDBfhGffnbnt3KanqHxcEff"
 			]
 		},
-		"34_ERC721/IERC721Metadata.sol": {
-			"keccak256": "0x369223f439829538abafadb700bc816a2e5f8a1de04dfc7eba699e88d1191c2f",
+		"Task2/work2/IERC721Metadata.sol": {
+			"keccak256": "0xca9b1a0bf2ca2bb0f89d9f053318eb8099e4d3f78cc0c2028997d9efccf6f92f",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://669a4d23b901c0c01b1048d970d0c733bd67c2a42a5890e28e9241adc83d7acd",
-				"dweb:/ipfs/QmYUNfMX6UePstDbkMEXwV8H11F5vx5YUp1GaPHaFaNKrd"
+				"bzz-raw://deb9192f64468b0ca6e76c32aeb6492da823de323c672a0771d5bdb01586e7d2",
+				"dweb:/ipfs/QmdrBxC76GTW7xbReWhJq6SpyU1RZzJQFJaAqfwLVGJ4vQ"
 			]
 		},
-		"34_ERC721/IERC721Receiver.sol": {
-			"keccak256": "0x5d50aec22d9a2ec6b5e14e33f31083a033a603154e65117c6061a2da910ef48d",
+		"Task2/work2/IERC721Receiver.sol": {
+			"keccak256": "0xc14679dbfb7edf45a291b326a7da2622f3de55656ba5f8d4385dc0e633d9f023",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://f1cd2573597b4d2e4957954fc755e9a354bf819f7dfa9517896fca033dde2642",
-				"dweb:/ipfs/QmRxwjwm9mFTGP9me93BZ23tfgdrpNtKQ7yEjjjpZaYfjD"
+				"bzz-raw://d17425aa3326a8bcf6efb198ac861c8002d0a4651d89a4c3eb46b275630dbbfa",
+				"dweb:/ipfs/QmW9V9a2x6sto3RAan9JYVoUZHchkFiBoNs8xyrkbB3WBz"
 			]
 		},
-		"34_ERC721/Strings.sol": {
+		"Task2/work2/Strings.sol": {
 			"keccak256": "0x321a3576c53dddaaebf8a11d489714f2617d37b71b2d8c28f69bdfa281c0fe29",
 			"license": "MIT",
 			"urls": [
