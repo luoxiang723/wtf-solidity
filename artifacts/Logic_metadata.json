@@ -6,19 +6,14 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"anonymous": false,
+				"inputs": [],
+				"name": "CallSuccess",
+				"type": "event"
 			},
 			{
 				"inputs": [],
-				"name": "increse",
+				"name": "increment",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -27,6 +22,19 @@
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "x",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -43,7 +51,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"46_ProxyContract/ProxyContract.sol": "Caller"
+			"46_ProxyContract/ProxyContract.sol": "Logic"
 		},
 		"evmVersion": "prague",
 		"libraries": {},

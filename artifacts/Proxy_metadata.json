@@ -9,7 +9,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_address",
+						"name": "_implementation",
 						"type": "address"
 					}
 				],
@@ -17,17 +17,8 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [],
-				"name": "increse",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
+				"stateMutability": "payable",
+				"type": "fallback"
 			}
 		],
 		"devdoc": {
@@ -43,7 +34,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"46_ProxyContract/ProxyContract.sol": "Caller"
+			"46_ProxyContract/ProxyContract.sol": "Proxy"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
