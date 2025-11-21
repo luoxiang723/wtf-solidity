@@ -9,6 +9,13 @@ contract Logic1 {
     function foo() public {
         words = "old";
     }
+
+    function upgrade(address newImplementation) external  {
+        require(admin == msg.sender);
+        //为什么要这么写？这样写不行吗？为什么说Transparent更费gas?
+        //if (admin == msg.sender) revert();
+        implementation = newImplementation;
+    }
 }
 
 contract Logic2 {
@@ -19,9 +26,16 @@ contract Logic2 {
     function foo() public {
         words = "new";
     }
+
+    function upgrade(address newImplementation) external  {
+        require(admin == msg.sender);
+        //为什么要这么写？这样写不行吗？为什么说Transparent更费gas?
+        //if (admin == msg.sender) revert();
+        implementation = newImplementation;
+    }
 }
 
-contract SimpleUpgrade {
+contract UUPSProxy {
     address public implementation;
     string public words;
     address public admin;
@@ -32,12 +46,9 @@ contract SimpleUpgrade {
     }
 
     fallback() external payable { 
-        require(msg.sender != admin);
+        //require(msg.sender != admin);
         (bool success, bytes memory data) = implementation.delegatecall(msg.data);
     }
 
-    function upgrade(address newImplementation) external  {
-        require(admin == msg.sender);
-        implementation = newImplementation;
-    }
+    
 }

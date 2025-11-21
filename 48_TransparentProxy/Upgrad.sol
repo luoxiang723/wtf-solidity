@@ -21,7 +21,7 @@ contract Logic2 {
     }
 }
 
-contract SimpleUpgrade {
+contract TransparentProxy {
     address public implementation;
     string public words;
     address public admin;
@@ -37,7 +37,9 @@ contract SimpleUpgrade {
     }
 
     function upgrade(address newImplementation) external  {
-        require(admin == msg.sender);
+        //require(admin == msg.sender);
+        //为什么要这么写？这样写不行吗？为什么说Transparent更费gas?
+        if (admin == msg.sender) revert();
         implementation = newImplementation;
     }
 }

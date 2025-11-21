@@ -6,6 +6,21 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_implementation",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
 				"inputs": [],
 				"name": "admin",
 				"outputs": [
@@ -16,13 +31,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "foo",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -78,7 +86,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"49_UUPS/UUPS.sol": "Logic1"
+			"48_TransparentProxy/Upgrad.sol": "TransparentProxy"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -92,12 +100,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"49_UUPS/UUPS.sol": {
-			"keccak256": "0xfe23bf964927b0f8523155c4282b9ef2640af2c30b8e95e0d5a7bb1631280d76",
+		"48_TransparentProxy/Upgrad.sol": {
+			"keccak256": "0x0590a417eebaafd73f886af8ff6736e1ac4cde1b5d69e16a2d19f6d376ae30f7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://323d3b3eaf34d485af49a5dbc82b4065b70e76823c1106f1c19cf664a45ac8f9",
-				"dweb:/ipfs/QmTc7eEj2aNhV7gkavSbs3GHiQjTFCZ3ENRRURxtfSLVLP"
+				"bzz-raw://ff8458ef0138067af5ccb1cc2279997c987ea5f7037115283d6d4851718d4770",
+				"dweb:/ipfs/QmcDKu1SaV9C1Vh3XEwVRxCLEk25pkY2DUiTpLRHKSvqre"
 			]
 		}
 	},

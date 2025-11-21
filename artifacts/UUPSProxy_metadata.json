@@ -6,6 +6,21 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_implementation",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
 				"inputs": [],
 				"name": "admin",
 				"outputs": [
@@ -20,13 +35,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "foo",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "implementation",
 				"outputs": [
 					{
@@ -36,19 +44,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "newImplementation",
-						"type": "address"
-					}
-				],
-				"name": "upgrade",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -78,7 +73,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"49_UUPS/UUPS.sol": "Logic1"
+			"49_UUPS/UUPS.sol": "UUPSProxy"
 		},
 		"evmVersion": "prague",
 		"libraries": {},

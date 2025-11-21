@@ -39,6 +39,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newImplementation",
+						"type": "address"
+					}
+				],
+				"name": "upgrade",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "words",
 				"outputs": [
@@ -65,7 +78,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"47_Upgrade/Upgrad.sol": "Logic2"
+			"49_UUPS/UUPS.sol": "Logic2"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -79,12 +92,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"47_Upgrade/Upgrad.sol": {
-			"keccak256": "0x25cc8de2c0dbe5cd0a1aae09a0ca7673125d09b39ad775397d7e44185fc9227f",
+		"49_UUPS/UUPS.sol": {
+			"keccak256": "0xfe23bf964927b0f8523155c4282b9ef2640af2c30b8e95e0d5a7bb1631280d76",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://30eb8616bc9c40fc27a8de1040707fc3420565398c483c26edaeb5b7b59e5a42",
-				"dweb:/ipfs/QmZ27QKww4tXPWvsb18NjcEfAjwYLpPyLgtYPJw7UqLp9r"
+				"bzz-raw://323d3b3eaf34d485af49a5dbc82b4065b70e76823c1106f1c19cf664a45ac8f9",
+				"dweb:/ipfs/QmTc7eEj2aNhV7gkavSbs3GHiQjTFCZ3ENRRURxtfSLVLP"
 			]
 		}
 	},
