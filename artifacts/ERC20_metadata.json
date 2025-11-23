@@ -9,12 +9,12 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_name",
+						"name": "name_",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "_symbol",
+						"name": "symbol_",
 						"type": "string"
 					}
 				],
@@ -75,12 +75,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "owner",
+						"name": "",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "spender",
+						"name": "",
 						"type": "address"
 					}
 				],
@@ -99,36 +99,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "allowances",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "spender",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -165,13 +141,8 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -181,21 +152,55 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
 				"name": "mint",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -215,12 +220,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "recipient",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -239,17 +244,17 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "from",
+						"name": "sender",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "recipient",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -275,21 +280,11 @@
 				}
 			},
 			"kind": "dev",
-			"methods": {
-				"allowance(address,address)": {
+			"methods": {},
+			"stateVariables": {
+				"allowance": {
 					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
 				},
-				"approve(address,uint256)": {
-					"details": "Sets a `value` amount of tokens as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
-				},
-				"transfer(address,uint256)": {
-					"details": "Moves a `value` amount of tokens from the caller's account to `to`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
-				},
-				"transferFrom(address,address,uint256)": {
-					"details": "Moves a `value` amount of tokens from `from` to `to` using the allowance mechanism. `value` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
-				}
-			},
-			"stateVariables": {
 				"balanceOf": {
 					"details": "Returns the value of tokens owned by `account`."
 				},
@@ -307,7 +302,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Task2/work1/ERC20.sol": "ERC20"
+			"50_ERC4626/ERC20.sol": "ERC20"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -321,19 +316,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"Task2/work1/ERC20.sol": {
-			"keccak256": "0x20ba43b7dac5cd70f9ccbec97fcbb6b6b65c8bdc5cdfeae189923cc40f0b15c3",
-			"urls": [
-				"bzz-raw://a6b220e5748d2b28b9cfdc34cd09f40107394127ba51d085efdfcc30d9d598ec",
-				"dweb:/ipfs/QmfSYqTJgiHQ3TWrQnSvQvaD5XEg9qw9Y33Z5ixxBk2PL1"
-			]
-		},
-		"Task2/work1/IERC20.sol": {
-			"keccak256": "0xa2d847c6ad19f5b8ac7c6f4c462bb4c1fd76307cb17478c49743354cf122f77f",
+		"50_ERC4626/ERC20.sol": {
+			"keccak256": "0x7823a0c23f36998319e33b9809a2b88f64860e995534f14b3b886d72ede6cd2b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bcb88894b8d6c2967694114eceba85a4dd40d7adea390e20e766657cb6d5d4be",
-				"dweb:/ipfs/QmQQVNAzL8PnhUCYzSvSoiEzuqNtEroBmyBgqCJ9hbKJ5B"
+				"bzz-raw://fd23ce7926297e0b5f9977b8f3593bf6a523a05137e1a35a0ca0fc96bcd071d0",
+				"dweb:/ipfs/QmX7hMCfcjBkK7y1JN68M6AEkvG4TBwBEHpQgtiS7SUdeE"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303",
+				"dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV"
 			]
 		}
 	},

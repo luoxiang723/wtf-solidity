@@ -1,0 +1,485 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdraw",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "asset",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "assetTokenAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "convertToAssets",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"name": "convertToShares",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "deposit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "maxDeposit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxAssets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "maxMint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxShares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "maxRedeem",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxShares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "maxWithdraw",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxAssets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"name": "previewDeposit",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "previewMint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"name": "previewRedeem",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"name": "previewWithdraw",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "redeem",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalAssets",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalManagedAssets",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "shares",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"asset()": {
+					"details": "返回金库的基础资产代币地址 （用于存款，取款） - 必须是 ERC20 代币合约地址. - 不能revert"
+				},
+				"convertToAssets(uint256)": {
+					"details": "返回利用一定数额金库额度可以换取的基础资产 - 不要包含费用 - 不包含滑点 - 不能revert"
+				},
+				"convertToShares(uint256)": {
+					"details": "返回利用一定数额基础资产可以换取的金库额度 - 不要包含费用 - 不包含滑点 - 不能revert"
+				},
+				"deposit(uint256,address)": {
+					"details": "存款函数: 用户向金库存入 assets 单位的基础资产，然后合约铸造 shares 单位的金库额度给 receiver 地址 - 必须释放 Deposit 事件. - 如果资产不能存入，必须revert，比如存款数额大大于上限等。"
+				},
+				"maxDeposit(address)": {
+					"details": "返回某个用户地址单次存款可存的最大基础资产数额。 - 如果有存款上限，那么返回值应该是个有限值 - 返回值不能超过 2 ** 256 - 1  - 不能revert"
+				},
+				"maxMint(address)": {
+					"details": "返回某个用户地址单次铸造可以铸造的最大金库额度 - 如果有铸造上限，那么返回值应该是个有限值 - 返回值不能超过 2 ** 256 - 1  - 不能revert"
+				},
+				"maxRedeem(address)": {
+					"details": "返回某个用户地址单次赎回可以销毁的最大金库额度 - 返回值应该是个有限值 - 如果没有其他限制，返回值应该是 balanceOf(owner) - 不能revert"
+				},
+				"maxWithdraw(address)": {
+					"details": "返回某个用户地址单次取款可以提取的最大基础资产额度 - 返回值应该是个有限值 - 不能revert"
+				},
+				"mint(uint256,address)": {
+					"details": "铸造函数: 用户需要存入 assets 单位的基础资产，然后合约给 receiver 地址铸造 share 数量的金库额度 - 必须释放 Deposit 事件. - 如果全部金库额度不能铸造，必须revert，比如铸造数额大大于上限等。"
+				},
+				"previewDeposit(uint256)": {
+					"details": "用于链上和链下用户在当前链上环境模拟存款一定数额的基础资产能够获得的金库额度 - 返回值要接近且不大于在同一交易进行存款得到的金库额度 - 不要考虑 maxDeposit 等限制，假设用户的存款交易会成功 - 要考虑费用 - 不能revert NOTE: 可以利用 convertToAssets 和 previewDeposit 返回值的差值来计算滑点"
+				},
+				"previewMint(uint256)": {
+					"details": "用于链上和链下用户在当前链上环境模拟铸造 shares 数额的金库额度需要存款的基础资产数量 - 返回值要接近且不小于在同一交易进行铸造一定数额金库额度所需的存款数量 - 不要考虑 maxMint 等限制，假设用户的存款交易会成功 - 要考虑费用 - 不能revert"
+				},
+				"previewRedeem(uint256)": {
+					"details": "用于链上和链下用户在当前链上环境模拟销毁 shares 数额的金库额度能够赎回的基础资产数量 - 返回值要接近且不小于在同一交易进行销毁一定数额的金库额度所能赎回的基础资产数量 - 不要考虑 maxRedeem 等限制，假设用户的赎回交易会成功 - 要考虑费用 - 不能revert."
+				},
+				"previewWithdraw(uint256)": {
+					"details": "用于链上和链下用户在当前链上环境模拟提款 assets 数额的基础资产需要赎回的金库份额 - 返回值要接近且不大于在同一交易进行提款一定数额基础资产所需赎回的金库份额 - 不要考虑 maxWithdraw 等限制，假设用户的提款交易会成功 - 要考虑费用 - 不能revert"
+				},
+				"redeem(uint256,address,address)": {
+					"details": "赎回函数: owner 地址销毁 shares 数量的金库额度，然后合约将 assets 单位的基础资产发给 receiver 地址 - 释放 Withdraw 事件 - 如果金库额度不能全部销毁，则revert"
+				},
+				"totalAssets()": {
+					"details": "返回金库中管理的基础资产代币总额 - 要包含利息 - 要包含费用 - 不能revert"
+				},
+				"withdraw(uint256,address,address)": {
+					"details": "提款函数: owner 地址销毁 share 单位的金库额度，然后合约将 assets 单位的基础资产发送给 receiver 地址 - 释放 Withdraw 事件 - 如果全部基础资产不能提取，将revert"
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"50_ERC4626/IERC4626.sol": "IERC466"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"50_ERC4626/IERC4626.sol": {
+			"keccak256": "0x25f998e420a0cb6d0642efaef4efc7b443f41678b67e25c47beecb81c974193a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://260b19e893507e82ac5a3f027f8df0988248e2357ef763cb755e1162c47ae05d",
+				"dweb:/ipfs/QmPuy7GuyPKg6SbD2aJ8ZWDNSXFvh4E1iZf5ZMYeyVWf6g"
+			]
+		}
+	},
+	"version": 1
+}
